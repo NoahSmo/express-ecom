@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node ./build/app.js",
+    "start:prod": "node dist/src/main",
     "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
     "generate": "prisma generate",
     "debug": "prisma generate && prisma db push",
