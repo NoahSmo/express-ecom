@@ -34,7 +34,6 @@ router.get('/:id', async (req, res) => {
             data: product
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             success: false,
             error: "Product does not exist"
@@ -51,7 +50,6 @@ router.post('/', authMiddleware.checkManager, async (req, res) => {
             data: newProduct
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             success: false,
             error: "Product could not be created"
@@ -68,7 +66,6 @@ router.patch('/:id', authMiddleware.checkManager, async (req, res) => {
             data: updatedProduct
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             success: false,
             error: "Product could not be updated"
@@ -85,7 +82,6 @@ router.delete('/:id', authMiddleware.checkManager, async (req, res) => {
             data: deletedProduct
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             success: false,
             error: "Product could not be deleted"

@@ -17,7 +17,6 @@ router.get('/', authMiddleware.checkManager, async (req, res) => {
             data: allOrders
         });
     } catch (err) {
-        console.log(err);
         return res.status(500).json({
             success: false,
             error: "Server Error"
@@ -34,7 +33,6 @@ router.get('/:id', authMiddleware.checkManager, async (req, res) => {
             data: order
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             success: false,
             error: "Order does not exist"
@@ -51,7 +49,6 @@ router.post('/', async (req, res) => {
             data: newOrder
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             success: false,
             error: "Order could not be created"
@@ -68,7 +65,6 @@ router.patch('/:id', authMiddleware.checkManager, async (req, res) => {
             data: updatedOrder
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             success: false,
             error: 'Order could not be updated'
@@ -85,7 +81,6 @@ router.delete('/:id', authMiddleware.checkManager, async (req, res) => {
             data: deletedOrder
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             success: false,
             error: 'Order could not be deleted'
