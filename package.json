@@ -7,7 +7,8 @@
     "start": "node ./build/app.js",
     "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
     "generate": "prisma generate",
-    "debug": "prisma generate && prisma db push"
+    "debug": "prisma generate && prisma db push",
+    "prod": "npm run build && npm run generate && npm run start"
   },
   "keywords": [],
   "author": "",
